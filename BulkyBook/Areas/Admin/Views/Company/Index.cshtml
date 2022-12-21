@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body style="background-color:#4D4F52;color:white">
+    <div>
+        <div class="table-top" style="height:80px;width:80%;margin-top:100px">
+            <h3 style="float:left;color:dodgerblue">Company client</h3>
+            <a class="btn btn-primary" asp-controller="Company" asp-action="Upsert" style="float:right;width:125px;margin-right:-110px">Create</a>
+        </div>
+        <table class="table-bordered text-light" id="companyTable" style="width:100%;background-color:black">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Street Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Postal Code</th>
+                    <th>Number</th>
+                   <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+@section Scripts
+{
+    <script src="~/js/Company.js"></script>
+}

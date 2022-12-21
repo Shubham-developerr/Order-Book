@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BulkyBook.Models.CoverType>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<partial name="_Notification" />
+<div class="conatiner"> 
+    <div class="category m-auto mt-5" style="width:60%">
+        <h3 class="text-primary float-start mb-4">Cover Types List</h3>
+        <a class="btn btn-primary float-end mb-4" asp-controller="CoverType" asp-action="Create">Create Cover</a>
+    </div>
+    <div>
+        <table class="table table-success table-bordered text-center" style="width:60%; margin-left:20%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var data in Model)
+            {
+                <tr>
+                    <td style="width:40%">@data.Name</td>
+                    <td style="width:20%"><a asp-action="Edit" asp-controller="CoverType" asp-route-id="@data.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-controller="CoverType" asp-route-id="@data.Id" class="btn btn-danger" >Delete</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+    
+</div>
+
+

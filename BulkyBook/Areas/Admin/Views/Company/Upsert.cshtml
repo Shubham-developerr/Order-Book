@@ -1,0 +1,55 @@
+﻿@model BulkyBook.Models.Company
+@{
+    ViewData["Title"] = "Upsert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="formModel" style="width:70%">
+        <div>
+            <h3>@(Model.Id==0? "Create":"Update") Company</h3>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+       <form method="post" class="m-auto" asp-action="Upsert">
+           <input asp-for="Id" hidden />
+           <span class="text-danger" asp-validation-for="Name"></span>
+           <br />
+           <label asp-for="Name">Name</label>
+           <input asp-for="Name" class="form-control" />
+           <br />
+           
+           <span class="text-danger" asp-validation-for="StreetAddress"></span>
+           <br />
+           <label asp-for="StreetAddress">Street Address</label>
+           <input asp-for="StreetAddress" class="form-control"/>
+           
+           <span class="text-danger" asp-validation-for="City"></span>
+           <br />
+           <label asp-for="City">City</label>
+           <input asp-for="City" class="form-control"/>
+           <br />
+          
+           <span class="text-danger" asp-validation-for="State"></span>
+           <br />
+           <label asp-for="State">State</label>
+           <input asp-for="State" class="form-control"/>
+          
+           <span class="text-danger" asp-validation-for="PostalCode"></span>
+           <br />
+           <label asp-for="PostalCode">Postal Code</label>
+           <input asp-for="PostalCode" class="form-control"/>
+           
+           <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+           <br />
+           <label asp-for="PhoneNumber">Phone Number</label>
+           <input asp-for="PhoneNumber" class="form-control"/>
+           <br />
+           
+           <button class="btn btn-primary">Create</button>
+       <a class="btn btn-warning" asp-controller="Company" asp-area="Admin" asp-action="Index">Back</a>
+       </form>
+    </div>
+</body>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

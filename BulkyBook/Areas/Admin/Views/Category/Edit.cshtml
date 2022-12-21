@@ -1,0 +1,28 @@
+﻿@model BulkyBook.Models.Category
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div asp-validation-summary="All" class="text-danger"></div>*@
+<form method="post">
+    <input asp-for="Id" hidden />
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" type="text" class="form-control" style="width:20%" />
+    @*server side validation*@
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label asp-for="DisplayOrder">Display Order</label>
+    <input asp-for="DisplayOrder" type="number" class="form-control" style="width:20%"/>
+    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a class="btn btn-danger" asp-controller="Category" asp-action="Index">Return</a>
+</form>
+
+@*client side validation just we need to include the scripts file shown below*@
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

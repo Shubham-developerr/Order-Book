@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<partial name="_Notification" />
+<div class="conatiner"> 
+    <div class="category mt-5" style="width:80%">
+        <h3 class="text-primary float-start mb-4" style="margin-left:15%">Products</h3>
+        <a class="btn btn-primary float-end mb-4 m-auto" asp-controller="Product" asp-action="Upsert">Create</a>
+    </div>
+    <div>
+        <table class="table table-success table-bordered text-center m-auto" id="tblData" style="width:80%;">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Author</th>
+                 <th>Price</th>
+                <th>Category</th>
+                <th>Cover Type</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/Product.js"></script>
+
+}

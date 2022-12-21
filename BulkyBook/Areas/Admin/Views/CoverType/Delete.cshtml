@@ -1,0 +1,22 @@
+﻿@model BulkyBook.Models.CoverType
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div asp-validation-summary="All" class="text-danger"></div>*@
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" type="text" class="form-control" disabled style="width:20%" />
+    <br />
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a class="btn btn-danger" asp-controller="CoverType" asp-action="Index">Return</a>
+</form>
+
+@*client side validation just we need to include the scripts file shown below*@
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
